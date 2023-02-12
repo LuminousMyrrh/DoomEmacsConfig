@@ -42,12 +42,13 @@
 ;;   ----------------------------------------------
 ;;   |                                            |
 ;;   |                                            |
-;;   |                   theme                    |
+;;   |              doom-settings                 |
 ;;   |                                            |
 ;;   |                                            |
 ;;   ----------------------------------------------
 
 (setq doom-theme 'doom-dracula)
+(setq doom-font (font-spec :size 15))
 
 
 ;;   ----------------------------------------------
@@ -85,7 +86,7 @@
 ;;   |                                            |
 ;;   ----------------------------------------------
 ;;
-;;      --god remap!!!!dksfjaslkdjfasdf
+;;      --god remap!!!!
 (use-package! key-chord)
 (setq key-chord-two-keys-delay 0.5)
 (key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
@@ -98,9 +99,10 @@
       :n "C-l" #'evil-window-right
       :n "J" #'evil-next-buffer
       :n "K" #'evil-prev-buffer
-
 )
 
+;;      --Primeagen god remap
+(map! :leader "s")
 
 ;;   ----------------------------------------------
 ;;   |                                            |
@@ -131,5 +133,6 @@
       :n "V" #'dired-find-file
       :n "R" #'dired-do-rename
       :n "D" #'dired-do-delete
+      :n "S" #'dired-do-symlink
       :leader (:prefix ("d". "dired") "j" #'dired-jump)
 )
